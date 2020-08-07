@@ -15,7 +15,8 @@ steps:
       - ./app
   - name: deploy
     commands:
-      - coscmd upload -r pwd /
+      - echo $KEY
+      - pwd
 trigger:
   branch:
     - master
