@@ -13,6 +13,14 @@ steps:
       - ls
       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
       - ./app
+  - name: deploy
+    image: golang:alpine
+    pull: if-not-exists # always never
+    environment:
+      KEY: VALUE
+    commands:
+      - pwd
+      - ls
 trigger:
   branch:
     - master
